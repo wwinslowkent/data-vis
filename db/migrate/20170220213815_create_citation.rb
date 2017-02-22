@@ -7,10 +7,9 @@ class CreateCitation < ActiveRecord::Migration[5.0]
       t.string :code_number, null: false
       t.string :code_description, null: false
       t.string :date_cited, null: false
-      t.string :date_corrected, null: false
+      t.string :date_corrected
       t.boolean :status, null: false
       t.string :case_number, null: false
-
     end
   end
 end
