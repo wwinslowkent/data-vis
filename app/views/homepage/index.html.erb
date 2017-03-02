@@ -1,0 +1,17 @@
+<% if notice || alert %>
+  <div id='homepageb'>
+<% else %>
+  <div id='homepage'>
+<% end %>
+
+
+<div class="large-6 small-6 columns ">
+  <br/>
+  <br/>
+  <%= form_tag(restaurants_path, :method => "get", id: "search-form") do %>
+     <%= text_field_tag :search, params[:search], placeholder: "Search for restaurants" %>
+     <div class='text-left'><%= submit_tag "Search", name: nil%> </div>
+  <% end %>
+</p>
+</div>
+</div>
