@@ -10,39 +10,44 @@ require 'pry'
 data = CSV.read("factual_data - factual_data.csv")
 data.each do |row|
   r = Restaurant.create(address: row[0], latutude: row[1], longitude: row[2], name: row[3], price: row[4], rating: row[5])
-  if row[6] == ''
-  else
+  if row[6] != ''
     if Category.exists?(:name => row[6])
       cat = Category.find_by(name: row[6])
-      Restaurantcategory.create(restaurant_id: r.id, category: cat)
+      Restcat.create(restaurant_id: r.id, category: cat)
+    else
+      Category.create(name: row[6])
     end
   end
-  if row[7] == ''
-  else
+  if row[7] != ''
     if Category.exists?(:name => row[7])
       cat = Category.find_by(name: row[7])
-      Restaurantcategory.create(restaurant_id: r.id, category: cat)
+      Restcat.create(restaurant_id: r.id, category: cat)
+    else
+      Category.create(name: row[6])
     end
   end
-  if row[8] == ''
-  else
+  if row[8] != ''
     if Category.exists?(:name => row[8])
       cat = Category.find_by(name: row[8])
-      Restaurantcategory.create(restaurant_id: r.id, category: cat)
+      Restcat.create(restaurant_id: r.id, category: cat)
+    else
+      Category.create(name: row[6])
     end
   end
-  if row[9] == ''
-  else
+  if row[9] != ''
     if Category.exists?(:name => row[9])
       cat = Category.find_by(name: row[9])
-      Restaurantcategory.create(restaurant_id: r.id, category: cat)
+      Restcat.create(restaurant_id: r.id, category: cat)
+    else
+      Category.create(name: row[6])
     end
   end
-  if row[10] == ''
-  else
+  if row[10] != ''
     if Category.exists?(:name => row[10])
       cat = Category.find_by(name: row[10])
-      Restaurantcategory.create(restaurant_id: r.id, category: cat)
+      Restcat.create(restaurant_id: r.id, category: cat)
+    else
+      Category.create(name: row[6])
     end
   end
 end
