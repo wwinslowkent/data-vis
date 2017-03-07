@@ -1,0 +1,15 @@
+<div class='dark'>
+<h1>Restaurants</h1>
+
+<% @restaurants.each do |restaurant| %>
+<%= link_to restaurant_path(restaurant) do %>
+  <div class='restaurantbox'>
+    <%= restaurant.name %><br/>
+  </div>
+  <% end %>
+<% end %>
+
+
+<%= button_to 'Add a new Restaurant', new_restaurant_path, method: :get %>
+
+</div>
